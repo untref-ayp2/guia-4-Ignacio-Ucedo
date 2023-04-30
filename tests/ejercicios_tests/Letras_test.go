@@ -3,6 +3,8 @@ package tests
 import (
 	"guia4/ejercicios"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestLetras(t *testing.T) {
@@ -10,6 +12,9 @@ func TestLetras(t *testing.T) {
 	if letras.Size() != 8 {
 		t.Errorf("Letras(\"Hola Mundo\") debería tener 8 caracteres")
 	}
+
+	assert.Equal(t, 8, letras.Size())
+
 	if !letras.Contains("H") {
 		t.Errorf("Letras(\"Hola Mundo\") debería contener la letra H")
 	}
